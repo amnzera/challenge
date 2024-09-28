@@ -1,0 +1,122 @@
+@import "src/assets/styles/colors";
+
+.nav {
+  height: 64px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 50px;
+  background-color: $color-core-foreground;
+}
+
+
+.links {
+  border: 1px solid $color-core-border;
+  border-radius: 100px;
+  width: 253px;
+  height: 40px;
+  display: flex;
+}
+
+.nav-link {
+  width: 100%;
+  text-decoration: none !important;
+
+  .container-btn {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    label {
+      margin: 13px 10px;
+    }
+
+  }
+
+  &.begin {
+    border-radius: 25px 0 0 25px;
+  }
+
+  &.favorite {
+    border-radius: 0 25px 25px 0;
+  }
+
+
+  label {
+    font-family: 'Poppins', serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+    text-align: center;
+    text-decoration: none !important;
+    color: #d1d1d1;
+    font-style: normal;
+  }
+
+  .container-btn {
+    display: flex;
+  }
+
+}
+
+.nav-link:hover, active {
+  color: $color-neutral-content;
+  background-color: white;
+  text-decoration: none;
+}
+
+.active {
+  background-color: white;
+  text-decoration: none;
+
+  .container-btn {
+    svg {
+      fill: #000;
+    }
+
+    label {
+      color: black !important;
+    }
+  }
+}
+
+
+@media (max-width: 540px) {
+  .flexGrid .col {
+    width: 30%;
+  }
+}
+
+@media (max-width: 800px) {
+  .nav {
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+  .logo {
+    width: 100%;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.counter {
+  background-color: white;
+  border-radius: 200px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', serif;
+  font-size: 14px;
+  color: black !important;
+  font-weight: 700;
+  line-height: 19.6px;
+  text-align: center;
+
+}
