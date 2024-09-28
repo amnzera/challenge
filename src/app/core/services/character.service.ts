@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
-import {Root} from "../interfaces/root";
+import {Result, Root} from "../interfaces/root";
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,7 @@ import {Root} from "../interfaces/root";
 
 export class CharacterService {
 
+  public favoriteCharacters = new BehaviorSubject<Result[]>([])
   public hero = new BehaviorSubject<any>(null)
   public comic = new BehaviorSubject<any>(null)
   public serie = new BehaviorSubject<any>(null)

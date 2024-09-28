@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Result} from "../../core/interfaces/root";
 
 @Component({
@@ -6,22 +6,10 @@ import {Result} from "../../core/interfaces/root";
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
 
   @Input() character!: Result;
-  @Output() clickEmitter = new EventEmitter;
+  @Output() favoriteEmitter = new EventEmitter<Result>;
 
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
-
-  favoriteCharacter(character: Result) {
-    character.favorite = !character.favorite
-    if (character) {
-
-    }
-  }
 
 }

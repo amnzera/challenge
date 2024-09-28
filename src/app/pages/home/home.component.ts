@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   characters: Result[] = [];
   offset: number = 0;
 
-  constructor(private marvelService: CharacterService, private router: Router) {
+  constructor(private characterService: CharacterService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   }
 
   getCharacters() {
-    this.marvelService.getAllCharacters(1)
+    this.characterService.getAllCharacters(1)
       .pipe(take(1))
       .subscribe((response: Root) => {
         this.characters = response.results
@@ -35,8 +35,22 @@ export class HomeComponent implements OnInit {
   }
 
   details(hero: any) {
-    this.marvelService.setHero(hero);
+    this.characterService.setHero(hero);
     this.router.navigate(['/details'])
+  }
+
+  favoriteCharacter(character: Result) {
+    character.favorite = !character.favorite
+    if (character.favorite) {
+      (this.characterService.favoriteCharacters.value).push(character)
+      const newCharacter = this.characterService.favoriteCharacters.value
+      this.characterService.favoriteCharacters.next(newCharacter)
+      return
+    }
+    const characterId = character.id
+    const currentFavorites = this.characterService.favoriteCharacters.value;
+    const updatedFavorites = currentFavorites.filter((c) => c.id !== characterId) as Result[]
+    this.characterService.favoriteCharacters.next(updatedFavorites)
   }
 
 
