@@ -1,18 +1,17 @@
 @import "src/assets/styles/colors";
 
 .main {
-  padding: 114px 215px 229px 215px;
+  padding: 0 215px 229px 215px;
   background-color: $color-core-background;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 @media (max-width: 700px) {
   .main {
-    padding: 114px 15% 229px 15%
+    padding: 114px 15% 229px 15%;
   }
 }
 
@@ -27,7 +26,6 @@
     display: block;
     margin-left: 8px;
   }
-
 }
 
 .flexGrid .col {
@@ -44,13 +42,12 @@
 
 @media (max-width: 1300px) {
   .flexGrid .col {
-    width: 50%
+    width: 50%;
   }
 }
 
 @media (max-width: 1000px) {
   .flexGrid .col {
-    width: 100%
+    width: 100%;
   }
 }
-

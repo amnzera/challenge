@@ -1,14 +1,14 @@
-.main{
-  padding: 114px 215px 229px 215px
+.main {
+  padding: 114px 215px 229px 215px;
 }
 
-@media (max-width: 700px){
-  .main{
-    padding: 114px 15% 229px 15%
+@media (max-width: 700px) {
+  .main {
+    padding: 114px 15% 229px 15%;
   }
 }
 
-.flexGrid{
+.flexGrid {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -20,25 +20,25 @@
   display: flex;
 }
 
-@media (max-width: 1600px){
-  .flexGrid .col{
+@media (max-width: 1600px) {
+  .flexGrid .col {
     width: 30%;
   }
 }
 
-@media (max-width: 1300px){
-  .flexGrid .col{
-    width: 50%
+@media (max-width: 1300px) {
+  .flexGrid .col {
+    width: 50%;
   }
 }
 
-@media (max-width: 1000px){
-  .flexGrid .col{
-    width: 100%
+@media (max-width: 1000px) {
+  .flexGrid .col {
+    width: 100%;
   }
 }
 
-.loading{
+.loading {
   display: flex;
   align-items: center;
   justify-content: center;

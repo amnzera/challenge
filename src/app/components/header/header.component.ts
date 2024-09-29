@@ -1,20 +1,17 @@
-import {Component, OnInit} from '@angular/core';
-import {RootAbstract} from "../../shared/class/root-abstract";
+import { Component, OnInit } from '@angular/core';
+import { RootAbstract } from '../../shared/class/root-abstract';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent extends RootAbstract implements OnInit {
-
   public counter: number = 0;
 
   constructor() {
     super();
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

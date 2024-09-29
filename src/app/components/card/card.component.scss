@@ -12,7 +12,7 @@ svg {
   height: 298px;
   width: 224px;
   border-radius: 20px 20px;
-  border-color: #3D3D3D;
+  border-color: #3d3d3d;
   margin-bottom: 52px;
   font-style: oblique;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -20,10 +20,9 @@ svg {
   flex-direction: column;
   background-color: $color-core-foreground;
 
-
   &.favorited {
     .addHero {
-      background-color: red
+      background-color: red;
     }
   }
 }
@@ -35,16 +34,16 @@ svg {
 
 .img {
   border-radius: 20px 20px 0 0;
-  border-color: #3D3D3D;
+  border-color: #3d3d3d;
   height: 100%;
   width: 100%;
   user-select: none;
 
-  border: 1px solid var(--color-core-border, #3D3D3D)
+  border: 1px solid var(--color-core-border, #3d3d3d);
 }
 
 .nameHero {
-  font-family: 'Creepster', serif;
+  font-family: "Creepster", serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 24px;
@@ -68,11 +67,10 @@ svg {
 
 .description {
   height: 100%;
-  font-family: 'Poppins', serif;
+  font-family: "Poppins", serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 22.4px;
   text-align: left;
   color: $color-core-content-low;
 }
-

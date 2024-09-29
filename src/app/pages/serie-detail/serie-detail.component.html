@@ -1,13 +1,12 @@
 <main>
-  <div *ngIf="(serie$ | async) as serie">
+  <div *ngIf="serie$ | async as serie">
     <div class="header">
-      <img alt="imagem" *ngIf="serie" [src]="getImage(serie)">
+      <img alt="imagem" *ngIf="serie" [src]="getImage(serie)" />
     </div>
-
 
     <ng-container *ngIf="serie">
       <div class="info">
-        <h1 class="text-primary">{{serie.name}}</h1>
+        <h1 class="text-primary">{{ serie.name }}</h1>
         <p [innerHtml]="serie.description"></p>
       </div>
 
@@ -25,11 +24,6 @@
 
       <!--      &lt;!&ndash; references &ndash;&gt;-->
       <!--      <app-list-group title="References" key="type" link="url" [isLink]="true" [items]="serie['urls']"></app-list-group>-->
-
-
     </ng-container>
-
   </div>
-
-
 </main>

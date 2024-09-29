@@ -9,7 +9,6 @@
   background-color: $color-core-foreground;
 }
 
-
 .links {
   border: 1px solid $color-core-border;
   border-radius: 100px;
@@ -32,7 +31,6 @@
     label:not(.counter) {
       margin: 13px 10px;
     }
-
   }
 
   &.begin {
@@ -43,9 +41,8 @@
     border-radius: 0 25px 25px 0;
   }
 
-
   label {
-    font-family: 'Poppins', serif;
+    font-family: "Poppins", serif;
     font-size: 14px;
     font-weight: 600;
     line-height: 14px;
@@ -58,10 +55,10 @@
   .container-btn {
     display: flex;
   }
-
 }
 
-.nav-link:hover, active {
+.nav-link:hover,
+active {
   color: $color-neutral-content;
   background-color: white;
   text-decoration: none;
@@ -81,7 +78,6 @@
     }
   }
 }
-
 
 @media (max-width: 540px) {
   .flexGrid .col {
@@ -112,11 +108,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Poppins', serif;
+  font-family: "Poppins", serif;
   font-size: 14px;
   color: black !important;
   font-weight: 700;
   line-height: 19.6px;
   text-align: center;
-
 }

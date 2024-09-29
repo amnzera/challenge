@@ -1,15 +1,26 @@
+<div class="container-favorite">
+  <section>
+    <img alt="title" src="./assets/icons/favorites.png"/>
+    <div>
+    </div>
+  </section>
+</div>
+
+
 <section class="main">
-  <div class="flexGrid" *ngIf="(characterService.favoriteCharacters | async) as characters; else noCharacter">
-
-    <app-card *ngFor="let character of characters" (favoriteEmitter)="favoriteCharacter($event)"
-              [character]="character"></app-card>
-
+  <div
+    class="flexGrid"
+    *ngIf="
+      characterService.favoriteCharacters | async as characters;
+      else noCharacter
+    "
+  >
+    <app-card
+      *ngFor="let character of characters"
+      (favoriteEmitter)="favoriteCharacter($event)"
+      [character]="character"
+    ></app-card>
   </div>
 
-
-  <ng-template #noCharacter>
-    no Character
-  </ng-template>
-
+  <ng-template #noCharacter> no Character</ng-template>
 </section>
-
