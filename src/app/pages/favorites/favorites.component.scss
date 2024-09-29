@@ -1,0 +1,57 @@
+@import "src/assets/styles/colors";
+
+.main {
+  height: 100vh;
+  padding: 114px 215px 229px 215px;
+  background-color: $color-core-background;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+@media (max-width: 700px) {
+  .main {
+    padding: 114px 15% 229px 15%
+  }
+}
+
+.flexGrid {
+  max-width: 860px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  app-card {
+    display: block;
+    margin-left: 8px;
+  }
+
+}
+
+.flexGrid .col {
+  width: 22%;
+  justify-content: center;
+  display: flex;
+}
+
+@media (max-width: 1600px) {
+  .flexGrid .col {
+    width: 27%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .flexGrid .col {
+    width: 50%
+  }
+}
+
+@media (max-width: 1000px) {
+  .flexGrid .col {
+    width: 100%
+  }
+}
+

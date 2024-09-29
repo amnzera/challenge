@@ -24,7 +24,9 @@
               fill="#A4A4A4"/>
           </svg>
           <label>Favoritos</label>
-          <label *ngIf="counter" class="counter">{{ counter }}</label>
+          <label *ngIf="(characterService.favoriteCharacters | async)?.length as counter"
+                 class="counter">{{ counter }}</label>
+
         </div>
       </a>
     </div>

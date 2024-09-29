@@ -12,18 +12,12 @@ export class HomeComponent extends RootAbstract implements OnInit {
 
   payload: { page: number, filter: string } = {page: 1, filter: ''}
   characters: Result[] = [];
-  offset: number = 0;
 
   constructor() {
     super();
   }
 
   ngOnInit(): void {
-    this.getCharacters()
-  }
-
-  paginator(offset: any) {
-    this.offset = this.offset + offset;
     this.getCharacters()
   }
 

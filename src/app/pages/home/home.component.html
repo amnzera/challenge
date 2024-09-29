@@ -1,6 +1,6 @@
 <app-search (filterEmitter)="filter($event)"></app-search>
 <section class="main">
-  <div class="flexGrid" *ngIf="characters else loading">
+  <div class="flexGrid" *ngIf="characters.length else loading">
 
     <app-card *ngFor="let character of characters" (favoriteEmitter)="favoriteCharacter($event)"
               [character]="character"></app-card>

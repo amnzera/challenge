@@ -13,7 +13,7 @@
 .links {
   border: 1px solid $color-core-border;
   border-radius: 100px;
-  width: 253px;
+  min-width: 253px;
   height: 40px;
   display: flex;
 }
@@ -29,7 +29,7 @@
     align-items: center;
     justify-content: center;
 
-    label {
+    label:not(.counter) {
       margin: 13px 10px;
     }
 
