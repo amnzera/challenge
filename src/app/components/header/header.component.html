@@ -1,13 +1,13 @@
 <header>
   <nav class="nav">
-    <a class="d-flex" [routerLink]="['/home']"
-      ><img alt="logo" class="logo" src="./assets/icons/logo.png"
+    <a class="d-flex" [routerLink]="['rick-and-morty/home']"
+    ><img alt="logo" class="logo" src="./assets/icons/logo.png"
     /></a>
 
     <div class="links">
       <a
         class="nav-link begin"
-        [routerLink]="['/home']"
+        [routerLink]="['rick-and-morty/home']"
         [routerLinkActive]="['active']"
       >
         <div class="container-btn">
@@ -30,7 +30,7 @@
 
       <a
         class="nav-link favorite"
-        [routerLink]="['/favorites']"
+        [routerLink]="['rick-and-morty/favorites']"
         [routerLinkActive]="['active']"
       >
         <div class="container-btn">
@@ -52,7 +52,7 @@
               (characterService.favoriteCharacters | async)?.length as counter
             "
             class="counter"
-            >{{ counter }}</label
+          >{{ counter }}</label
           >
         </div>
       </a>

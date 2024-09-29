@@ -1,11 +1,29 @@
-@import "src/assets/styles/colors";
+@import "../../../../../assets/styles/colors";
 
-.main {
-  padding: 0 215px 229px 215px;
+
+.container-favorite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-core-background;
+  padding: 48px 215px 48px 215px;
+
+  section {
+    height: 60px;
+    max-width: 690px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+
+main {
+  height: 100vh;
   background-color: $color-core-background;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 

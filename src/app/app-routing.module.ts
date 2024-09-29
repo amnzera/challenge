@@ -1,46 +1,15 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { DetailsComponent } from './pages/details/details.component';
-import { ComicsComponent } from './pages/comics/comics.component';
-import { DetailComicComponent } from './pages/detail-comic/detail-comic.component';
-import { SeriesComponent } from './pages/series/series.component';
-import { SerieDetailComponent } from './pages/serie-detail/serie-detail.component';
-import { FavoritesComponent } from './pages/favorites/favorites.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/rick-and-morty',
     pathMatch: 'full',
   },
   {
-    path: 'home',
-    component: HomeComponent,
-  },
-  {
-    path: 'comics',
-    component: ComicsComponent,
-  },
-  {
-    path: 'series',
-    component: SeriesComponent,
-  },
-  {
-    path: 'favorites',
-    component: FavoritesComponent,
-  },
-  {
-    path: 'details',
-    component: DetailsComponent,
-  },
-  {
-    path: 'detail-comic',
-    component: DetailComicComponent,
-  },
-  {
-    path: 'serie-detail',
-    component: SerieDetailComponent,
+    path: 'rick-and-morty',
+    loadChildren: () => import('./modules/rick-and-morty/rick-and-morty.module').then((m) => m.RickAndMortyModule),
   },
 ];
 
@@ -48,4 +17,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { RootAbstract } from '../../shared/class/root-abstract';
+import {Component, OnInit} from '@angular/core';
+import {RootAbstract} from '../../../../shared/class/root-abstract';
 
 @Component({
   selector: 'app-favorites',
@@ -11,5 +11,6 @@ export class FavoritesComponent extends RootAbstract implements OnInit {
     super();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }
