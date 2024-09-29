@@ -1,5 +1,12 @@
 <app-search (filterEmitter)="filter($event)"></app-search>
-<section class="main">
+<section class="main"
+
+         infiniteScroll
+         [infiniteScrollDistance]="2"
+         [infiniteScrollUpDistance]="1.5"
+         [infiniteScrollThrottle]="50"
+         (scrolled)="onScrollDown()"
+>
   <div class="flexGrid" *ngIf="characters.length; else loading">
     <app-card
       *ngFor="let character of characters"

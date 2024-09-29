@@ -17,6 +17,11 @@ export class HomeComponent extends RootAbstract implements OnInit {
     super();
   }
 
+  onScrollDown() {
+    this.payload.page = this.payload.page + 1;
+    this.getCharacters()
+  }
+
   ngOnInit(): void {
     this.getCharacters();
   }
@@ -51,7 +56,7 @@ export class HomeComponent extends RootAbstract implements OnInit {
       .subscribe({
         next: (response: Root) => {
           this.errorCharacters = false;
-          this.characters = response.results;
+          this.characters = [...this.characters, ...response.results];
         },
         error: () => {
           this.errorCharacters = true;
