@@ -6,6 +6,7 @@ import {ComicsComponent} from "./pages/comics/comics.component";
 import {DetailComicComponent} from "./pages/detail-comic/detail-comic.component";
 import {SeriesComponent} from "./pages/series/series.component";
 import {SerieDetailComponent} from "./pages/serie-detail/serie-detail.component";
+import {FavoritesComponent} from "./pages/favorites/favorites.component";
 
 const routes: Routes = [
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'series',
     component: SeriesComponent,
+  },
+  {
+    path: 'favorites',
+    component: FavoritesComponent,
   },
   {
     path: 'details',

@@ -35,8 +35,8 @@ export class CharacterService {
     return thumbnail && `${thumbnail.path}/standard_fantastic.${thumbnail.extension}`;
   }
 
-  getAllCharacters(page: number): Observable<Root> {
-    return this.http.get<Root>(`${environment.urlApi}/character?page=${page.toString()}`);
+  getAllCharacters(payload: { page: number, filter: string }): Observable<Root> {
+    return this.http.get<Root>(`${environment.urlApi}/character?page=${payload.page.toString()}&name=${payload.filter}`);
   }
 
 

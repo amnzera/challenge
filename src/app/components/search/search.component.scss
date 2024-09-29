@@ -1,15 +1,38 @@
 @import "src/assets/styles/colors";
 
 main {
-  background-color: $color-core-background;
-  height: 48px;
-  padding: 48px 215px 48px 215px;
-
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: $color-core-background;
+  padding: 48px 215px 48px 215px;
 
-  form {
+  section {
+    max-width: 690px;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
+
+  * {
+    font-family: 'Poppins', serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22.4px;
+    text-align: left;
+    color: white;
+    background: none;
+    border-radius: 200px;
+  }
+
+  input {
+    border: 1px solid var(--color-neutral-border, #3D3D3D);
+    border-radius: 200px;
+    padding: 13px 16px;
+    width: 327px;
+    height: 48px;
+  }
+
+
 }

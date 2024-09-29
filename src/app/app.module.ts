@@ -19,6 +19,7 @@ import {SeriesComponent} from './pages/series/series.component';
 import {SerieDetailComponent} from './pages/serie-detail/serie-detail.component';
 import {SearchComponent} from './components/search/search.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { FavoritesComponent } from './pages/favorites/favorites.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     LoadingComponent,
     SeriesComponent,
     SerieDetailComponent,
-    SearchComponent
+    SearchComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, UntypedFormGroup} from "@angular/forms";
+import {debounceTime, distinctUntilChanged} from "rxjs";
 
 @Component({
   selector: 'app-search',
@@ -7,6 +8,7 @@ import {FormControl, UntypedFormGroup} from "@angular/forms";
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
+  @Output() filterEmitter: EventEmitter<string> = new EventEmitter();
   public form!: UntypedFormGroup;
 
   constructor() {
@@ -24,8 +26,10 @@ export class SearchComponent implements OnInit {
   }
 
   listenFilter() {
-    this.form.get('filter')?.valueChanges.subscribe((filter) => {
-      console.log(filter)
-    })
+    this.form.get('filter')?.valueChanges
+      .pipe(distinctUntilChanged(), debounceTime(1500))
+      .subscribe((filter) => {
+        this.filterEmitter.emit(filter)
+      })
   }
 }
