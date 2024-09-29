@@ -7,20 +7,19 @@
 </div>
 
 
-<section class="main">
-  <div
-    class="flexGrid"
-    *ngIf="
-      characterService.favoriteCharacters | async as characters;
-      else noCharacter
-    "
-  >
-    <app-card
-      *ngFor="let character of characters"
-      (favoriteEmitter)="favoriteCharacter($event)"
-      [character]="character"
-    ></app-card>
+<main>
+  <div *ngIf=" characterService.favoriteCharacters | async as characters">
+    <div *ngIf="characters.length > 0 ; else noCharacter" class="flexGrid">
+      <app-card
+        *ngFor="let character of characters"
+        (favoriteEmitter)="favoriteCharacter($event)"
+        [character]="character"
+      ></app-card>
+    </div>
+    <ng-template #noCharacter>
+      <app-warning></app-warning>
+    </ng-template>
   </div>
 
-  <ng-template #noCharacter> no Character</ng-template>
-</section>
+
+</main>

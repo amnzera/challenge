@@ -20,6 +20,7 @@ import { SerieDetailComponent } from './pages/serie-detail/serie-detail.componen
 import { SearchComponent } from './components/search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FavoritesComponent } from './pages/favorites/favorites.component';
+import { WarningComponent } from './components/warning/warning.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { FavoritesComponent } from './pages/favorites/favorites.component';
     SerieDetailComponent,
     SearchComponent,
     FavoritesComponent,
+    WarningComponent,
   ],
   imports: [
     BrowserModule,

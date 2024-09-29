@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {take} from 'rxjs';
+import {finalize, take} from 'rxjs';
 import {Result, Root} from '../../core/interfaces/root';
 import {RootAbstract} from '../../shared/class/root-abstract';
 
@@ -21,6 +21,24 @@ export class HomeComponent extends RootAbstract implements OnInit {
     this.getCharacters();
   }
 
+  listenFavorites(): void {
+    this.characterService.favoriteCharacters
+      .pipe(take(1))
+      .subscribe((characterFavorite: Result[]) => {
+        if (characterFavorite.length > 0) {
+          characterFavorite.forEach((favorite: Result) => {
+            this.characters = this.characters.map((character: Result) => {
+              if (character.id === favorite.id) {
+                character.favorite = true;
+              }
+              return character;
+            });
+          })
+
+        }
+      })
+  }
+
   filter(filterValue: string) {
     this.payload.filter = filterValue;
     this.getCharacters();
@@ -29,7 +47,7 @@ export class HomeComponent extends RootAbstract implements OnInit {
   getCharacters() {
     this.characterService
       .getAllCharacters(this.payload)
-      .pipe(take(1))
+      .pipe(take(1), finalize(() => this.listenFavorites()))
       .subscribe({
         next: (response: Root) => {
           this.errorCharacters = false;

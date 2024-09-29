@@ -1,0 +1,57 @@
+@import "src/assets/styles/colors";
+
+main {
+  font-family: 'Poppins', serif;
+  width: 720px;
+  height: 512px;
+  border-radius: 12px;
+  background: $color-core-foreground;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    color: $color-core-content;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  span {
+    color: $color-core-content-low;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  button {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 16px;
+    gap: 8px;
+    isolation: isolate;
+    min-width: 80px;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+  }
+}
