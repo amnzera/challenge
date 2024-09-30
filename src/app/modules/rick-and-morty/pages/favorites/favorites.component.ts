@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {RootAbstract} from '../../../../shared/class/root-abstract';
+import {RootAbstract} from '../../class/root-abstract';
 
 @Component({
   selector: 'app-favorites',

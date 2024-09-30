@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { RootAbstract } from '../../shared/class/root-abstract';
+import {Component, OnInit} from '@angular/core';
+import {RootAbstract} from '../../class/root-abstract';
 
 @Component({
   selector: 'app-header',
@@ -13,5 +13,6 @@ export class HeaderComponent extends RootAbstract implements OnInit {
     super();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }

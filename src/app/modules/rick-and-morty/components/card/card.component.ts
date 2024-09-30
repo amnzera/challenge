@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Result } from '../../core/interfaces/root';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Result} from '../../interfaces/root';
 
 @Component({
   selector: 'app-card',

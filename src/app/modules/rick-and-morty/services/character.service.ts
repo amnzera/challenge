@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
-import { Result, Root } from '../interfaces/root';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {environment} from '../../../../environments/environment';
+import {Result, Root} from '../interfaces/root';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +13,8 @@ export class CharacterService {
   public comic = new BehaviorSubject<any>(null);
   public serie = new BehaviorSubject<any>(null);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   setHero(hero: any) {
     this.hero.next(hero);

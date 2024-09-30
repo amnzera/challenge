@@ -4,7 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/rick-and-morty',
+    redirectTo: 'rick-and-morty/home',
     pathMatch: 'full',
   },
   {

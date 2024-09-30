@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {finalize, take} from 'rxjs';
-import {Result, Root} from '../../../../core/interfaces/root';
-import {RootAbstract} from '../../../../shared/class/root-abstract';
+import {Result, Root} from '../../interfaces/root';
+import {RootAbstract} from '../../class/root-abstract';
 
 @Component({
   selector: 'app-home',

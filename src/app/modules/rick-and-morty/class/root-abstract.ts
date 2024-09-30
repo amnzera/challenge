@@ -1,6 +1,6 @@
-import { inject } from '@angular/core';
-import { CharacterService } from '../../core/services/character.service';
-import { Result } from '../../core/interfaces/root';
+import {inject} from '@angular/core';
+import {CharacterService} from '../services/character.service';
+import {Result} from '../interfaces/root';
 
 export class RootAbstract {
   public characterService = inject(CharacterService);
