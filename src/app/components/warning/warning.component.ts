@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-warning',
@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WarningComponent implements OnInit {
 
-  constructor() { }
+  @Input() label!: string;
+  @Input() span!: string;
+  @Input() enableBtn: boolean = true;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

@@ -6,7 +6,7 @@
          [infiniteScrollThrottle]="50"
          (scrolled)="onScrollDown()"
 >
-  <div class="flexGrid" *ngIf="characters.length || charactersFilters.length; else loading">
+  <div class="flexGrid" *ngIf="characters.length || charactersFilters.length && !errorCharacters; else loading">
     <app-card
       *ngFor="let character of getListCharacter()"
       (favoriteEmitter)="favoriteCharacter($event)"
@@ -18,5 +18,8 @@
     <app-loading></app-loading>
   </ng-template>
 
-  <div *ngIf="errorCharacters">ERRO</div>
+  <div *ngIf="errorCharacters">
+    <app-warning [label]="'Nada foi encontrado'"
+                 [span]="'Tente realizar uma nova busca'" [enableBtn]="false"></app-warning>
+  </div>
 </section>

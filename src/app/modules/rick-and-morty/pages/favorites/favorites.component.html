@@ -17,7 +17,8 @@
       ></app-card>
     </div>
     <ng-template #noCharacter>
-      <app-warning></app-warning>
+      <app-warning [label]="'Parece que você ainda não tem favoritos'"
+                   [span]="'Volte à página inicial e escolha os melhores para você.'"></app-warning>
     </ng-template>
   </div>
 
