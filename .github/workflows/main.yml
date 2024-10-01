@@ -1,22 +1,26 @@
-name: GitHub Pages
+name: Angular Build
 
+# {1}
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  deploy:
+  angular:
+    name: Angular Build
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [20]
-    permissions:
-      contents: write
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
+      # {2}
       - name: Checkout the source code
         uses: actions/checkout@v3
 
+      # {3}
       - name: Setup Node.js $
         uses: actions/setup-node@v3
         with:
@@ -24,16 +28,12 @@ jobs:
           cache: 'npm'
           cache-dependency-path: package-lock.json
 
+      # {4}
       - name: Install dependencies
-        run: npm install
-
+        run: npm ci
+      # {5}
+      - name: Run tests
+        run: npm run test:ci
+      # {6}
       - name: Build
         run: npm run build
-
-      - name: Deploy
-        if: success()
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist/characters
-          enable_jekyll: true
