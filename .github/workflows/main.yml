@@ -14,12 +14,10 @@ jobs:
     permissions:
       contents: write
     steps:
-       # {2}
       - name: Checkout the source code
         uses: actions/checkout@v3
 
-      # {3}
-      - name: Setup Node.js
+      - name: Setup Node.js $
         uses: actions/setup-node@v3
         with:
           node-version: $
