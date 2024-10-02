@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {finalize, take} from 'rxjs';
 import {Result, Root} from '../../interfaces/root';
 import {RootAbstract} from '../../class/root-abstract';
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-home',
@@ -67,13 +68,17 @@ export class HomeComponent extends RootAbstract implements OnInit {
           this.errorCharacters = false;
           if (this.payload.filter && this.payload.filter !== '') {
             this.characters = [];
-            this.charactersFilters = response.results;
+            this.charactersFilters = [...this.charactersFilters, ...response.results];
             return
           }
           this.characters = [...this.characters, ...response.results];
         },
-        error: () => {
-          this.errorCharacters = true;
+        error: (errorResponse: HttpErrorResponse) => {
+          if (errorResponse.status !== 404) {
+            this.errorCharacters = true;
+            return;
+          }
+
         }
       });
   }
